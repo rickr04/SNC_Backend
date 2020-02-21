@@ -1,0 +1,41 @@
+{
+  "name": "SNC-Backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "10.15.0",
+    "npm": "6.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatthewFrisby/523-Project"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatthewFrisby/523-Project/issues"
+  },
+  "homepage": "https://github.com/MatthewFrisby/523-Project#readme",
+  "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
+    "aws-sdk": "^2.409.0",
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^2.0.3",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "global-fetch": "^0.2.2",
+    "hummus": "^1.0.95",
+    "json2xls": "^0.1.2",
+    "memory-streams": "^0.1.3",
+    "mongoose": "^5.4.15",
+    "npm": "^6.9.0"
+  }
+}
