@@ -59,7 +59,7 @@ app.set('view engine', 'ejs');
 
 // Use sessions for tracking logins
 app.use(session({
-  secret: 'sEcUrE&&C0MP1i@NT',
+  secret: process.env.SESSION_SECRET,
   resave: true,
   saveUninitialized: false,
   store: new MongoStore({
