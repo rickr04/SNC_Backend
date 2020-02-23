@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+	<head>
+		<meta charset='utf-8'>
+		<title>SNC API</title>
+		<link href='/stylesheets/style.css' rel='stylesheet' type='text/css' />
+	</head>
+		<h1>Welcome to the SNC API!</h1>
+		<br>
+	<body>
+
+<pre>
+<h2>REQUEST</h2>
+
+	<b>API Request</b>
+	-----------
+	SNC exposes a list of REST APIs to perform various actions. These APIs can be used in order to navigate the Point app.
+
+	The base URL for all API requests is localhost:3000/.
+
+		Content Type
+		------------
+		SNC only accepts input of the type application/json.
+
+
+
+	<b>API Response</b>
+	------------
+	All SNC APIs return a response in json format. The API returns one of the following HTTP status codes.
+
+	200 - OK, The request has succeeded. Resource has not been modified.
+	201 - Created, The request has succeeded. Resource has been modified.
+	202 - Accepted, The request has been accepted for processing, but the processing has not been completed. The request might or might not eventually be acted upon, as it might be disallowed when processing actually takes place.
+	401 - Unauthorized, The request requires authentication. The Authentication header field must contain a valid Bearer token in order to be authenticated.
+	409 - Conflict, The request could not be completed due to a conflict with the current state of the target resource.
+	413 - Entity too large, The server is refusing to process a request because the request payload is larger than the server is willing or able to process.
+	422 - Unprocessable Entity, The server understands the content type of the request entity, and the syntax of the request entity is correct but was unable to process the contained instructions.
+	500 - Internal Server Error, The server encountered an unexpected condition that prevented it from fulfilling the request.
+
+		Response Attributes
+		-------------------
+		message: Provides information regarding the request
+		error: Error received by the server
+		token: Authorization token
+</pre>
+</body>
+</html>

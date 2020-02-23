@@ -10,7 +10,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
 //const balances = require('./routes/balances');
-//const index = require('./routes/index');
+const index = require('./routes/index');
 //const merchants = require('./routes/merchants');
 //const messaging = require('./routes/messaging');
 const users = require('./routes/users');
@@ -54,8 +54,8 @@ testDB();
 app.use(redirectToHTTPS([/localhost:(\d{4})/]));
 
 //View engine setup
-//app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 // Use sessions for tracking logins
 app.use(session({
@@ -95,7 +95,7 @@ app.use((req, res, next) => {
 });
 
 //Routes
-//app.use('/', index);
+app.use('/', index);
 //app.use('/users', users);
 
 // catch 404 and forward to error handler
