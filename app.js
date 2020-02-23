@@ -20,6 +20,7 @@ const app = express();
 //Set up mongoose connection
 const mongoose = require('mongoose');
 mongoose.set('useNewUrlParser', true);
+mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
 const mongoDB = process.env.MONGODB_URI
@@ -28,8 +29,6 @@ mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
-db.collection('Users').rename('users');
 
 const getPCIModel = require('./utils/getPCIModel');
 
@@ -70,9 +69,7 @@ app.use(session({
 
 //Log connections to database
 const mongoMorgan = require('mongoose-morgan');
-app.use(mongoMorgan(mongoDB, 'combined', {
-  collection: 'logs'
-}));
+app.use(mongoMorgan({ connectionString: mongoDB, collection: 'logs' }));
 
 //Log connections to console
 app.use(logger('dev'));

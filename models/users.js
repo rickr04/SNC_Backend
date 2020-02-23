@@ -17,7 +17,7 @@ const userSchema = new Schema({
   lastLoginAt: { type: Date },
   createdAt: { type: Date, required: true },
   updatedAt: { type: Date, required: true }
-}, { collection: "Users" });
+}, { collection: "users" });
 
 /* INDEXES (used to speed up queries)
  * db.users.createIndex({ isActive: 1, _id: 1 })
