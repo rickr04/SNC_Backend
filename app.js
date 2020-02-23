@@ -2,17 +2,18 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const createError = require('http-errors');
 const express = require('express');
-//const jwt = require('jsonwebtoken');
 const logger = require('morgan');
 const path = require('path');
 const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
 const dotenv = require('dotenv').config();
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 //const balances = require('./routes/balances');
 //const index = require('./routes/index');
 //const merchants = require('./routes/merchants');
 //const messaging = require('./routes/messaging');
-//const users = require('./routes/users');
+const users = require('./routes/users');
 
 const app = express();
 
@@ -27,6 +28,8 @@ mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+db.collection('Users').rename('users');
 
 const getPCIModel = require('./utils/getPCIModel');
 
@@ -54,6 +57,16 @@ app.use(redirectToHTTPS([/localhost:(\d{4})/]));
 //View engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+// Use sessions for tracking logins
+app.use(session({
+  secret: 'sEcUrE&&C0MP1i@NT',
+  resave: true,
+  saveUninitialized: false,
+  store: new MongoStore({
+    mongooseConnection: db
+  })
+}));
 
 //Log connections to database
 const mongoMorgan = require('mongo-morgan');
