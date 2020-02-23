@@ -54,8 +54,8 @@ testDB();
 app.use(redirectToHTTPS([/localhost:(\d{4})/]));
 
 //View engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'ejs');
 
 // Use sessions for tracking logins
 app.use(session({
