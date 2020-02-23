@@ -69,7 +69,7 @@ app.use(session({
 }));
 
 //Log connections to database
-const mongoMorgan = require('mongo-morgan');
+const mongoMorgan = require('mongoose-morgan');
 app.use(mongoMorgan(mongoDB, 'combined', {
   collection: 'logs'
 }));
