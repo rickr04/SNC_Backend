@@ -4,7 +4,7 @@ const uController = require('../controllers/users');
 
 //const userAuth = require('../middleware/userAuth');
 
-//api.pointup.io/users
+//localhost:3000/users
 const router = express.Router();
 
 //Users
@@ -13,6 +13,9 @@ const router = express.Router();
 router.get('/', /*userAuth,*/ uController.getUser);
 
 /*
+//SignUp
+router.post('/signup', uController.signUp);
+
 //Verify
 router.post('/verify', uController.verify);
 

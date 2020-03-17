@@ -13,13 +13,13 @@ const pciSchema = new Schema({
   responses: { type: Array},
   keywords: { type: Array},
   kIDs: { type: Array},
-}, { collection: "PCI_3.2.1_Questions" });
+}, { collection: "pci_3.2.1_questions" });
 
 /* INDEXES (used to speed up queries)
  * db.users.createIndex({ isActive: 1, _id: 1 })
  */
 
 //Create a model using the schema
-const pci = mongoose.model('PCI_3.2.1_Questions', pciSchema);
+const pci = mongoose.model('pci_3.2.1_questions', pciSchema);
 
 module.exports = pci;

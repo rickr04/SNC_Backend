@@ -8,13 +8,13 @@ const knowledgeBaseSchema = new Schema({
   versionAdded: { type: String },
   name: { type: String },
   description: { type: String}
-}, { collection: "KnowledgeBase" });
+}, { collection: "knowledge_base" });
 
 /* INDEXES (used to speed up queries)
  * db.users.createIndex({ isActive: 1, _id: 1 })
  */
 
 //Create a model using the schema
-const knowledgeBase = mongoose.model('KnowledgeBase', knowledgeBaseSchema);
+const knowledgeBase = mongoose.model('knowledge_base', knowledgeBaseSchema);
 
 module.exports = knowledgeBase;

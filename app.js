@@ -14,6 +14,7 @@ const index = require('./routes/index');
 //const merchants = require('./routes/merchants');
 //const messaging = require('./routes/messaging');
 const users = require('./routes/users');
+const pci = require('./routes/pci');
 
 const app = express();
 
@@ -30,10 +31,10 @@ mongoose.Promise = global.Promise;
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-const getPCIModel = require('./utils/getPCIModel');
+//const getPCIModel = require('./utils/getPCIModel');
 
-const Questions = getPCIModel("3.2.1");
-const KnowledgeBase = require('./models/knowledgeBase');
+//const Questions = getPCIModel("3.2.1");
+//const KnowledgeBase = require('./models/knowledgeBase');
 
 async function testDB() {
   let pci = await Questions.find({ header: false}).exec();
@@ -47,7 +48,7 @@ async function testDB() {
   console.log(kID);
 
 }
-testDB();
+//testDB();
 
 
 //Redirect HTTP to HTTPS
@@ -97,6 +98,7 @@ app.use((req, res, next) => {
 //Routes
 app.use('/', index);
 //app.use('/users', users);
+app.use('/pci', pci);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
