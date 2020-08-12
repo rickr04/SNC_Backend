@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 # SNC_Backend
-Home of the Security-N-Compliance backend
-=======
-# Security-N-Compliance
-
 Home of the SNC Backend API and SNC Angular Client
 
 # Getting Started
@@ -108,4 +103,3 @@ Suggested editor for working on this application is Atom. You can log in to Git 
 
 ## Update 11/2019
 Project is being taken over by Rick and Nathan
->>>>>>> c887f7e2a9bee7e15434d2cf921a6f59258a6460
