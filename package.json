@@ -37,7 +37,7 @@
     "express-session": "^1.17.0",
     "global-fetch": "^0.2.2",
     "http-errors": "^1.7.3",
-    "hummus": "^1.0.108",
+    "hummus": "^1.0.111",
     "json2xls": "^0.1.2",
     "jsonwebtoken": "^8.5.1",
     "memory-streams": "^0.1.3",
